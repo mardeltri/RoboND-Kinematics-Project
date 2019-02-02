@@ -1,24 +1,9 @@
 ## Project: Kinematics Pick & Place
-### Writeup Template: You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
----
-
-
-**Steps to complete the project:**  
-
-
-1. Set up your ROS Workspace.
-2. Download or clone the [project repository](https://github.com/udacity/RoboND-Kinematics-Project) into the ***src*** directory of your ROS Workspace.  
-3. Experiment with the forward_kinematics environment and get familiar with the robot.
-4. Launch in [demo mode](https://classroom.udacity.com/nanodegrees/nd209/parts/7b2fd2d7-e181-401e-977a-6158c77bf816/modules/8855de3f-2897-46c3-a805-628b5ecf045b/lessons/91d017b1-4493-4522-ad52-04a74a01094c/concepts/ae64bb91-e8c4-44c9-adbe-798e8f688193).
-5. Perform Kinematic Analysis for the robot following the [project rubric](https://review.udacity.com/#!/rubrics/972/view).
-6. Fill in the `IK_server.py` with your Inverse Kinematics code. 
-
 
 [//]: # (Image References)
 
-[image1]: ./misc_images/misc1.png
-[image2]: ./misc_images/misc3.png
+[ForwardKinematcs]: ./misc_images/ForwardKinematcs.png
+[URDF]: ./misc_images/URDF.png
 [image3]: ./misc_images/misc2.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
@@ -34,10 +19,26 @@ You're reading it!
 ### Kinematic Analysis
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
-Here is an example of how to include an image in your writeup.
+In this section how to obtain the DH parameters table will be addressed. These parameters will help us to describe the transformation
+matrices to relate the end effector position and the joint angles.
 
-![alt text][image1]
+First, in order to understand how the Kuka KR210 can move the forward kinematics demo can be launched.
 
+![alt text][ForwardKinematcs]
+
+Moving the sliders in joint_state_publisher it can be understood the robot workspace as well as the joint limits.
+
+Before obtaining the DH parameters we need to identify the joint positions with respect to each other, thus defining
+the axes of each joint. This geometrical data can be obtained from the kr210.urdf.xacro file.
+
+For example, from this line we know that joint 1 is 0.33 m above base link and at the same x and y position.
+
+```
+<joint name="joint_1" type="revolute">
+    <origin xyz="0 0 0.33" rpy="0 0 0"/>
+```
+![alt text][URDF]
+	
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
 Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
