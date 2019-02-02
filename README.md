@@ -4,7 +4,7 @@
 
 [ForwardKinematcs]: ./misc_images/ForwardKinematcs.png
 [URDF]: ./misc_images/URDF.png
-[image3]: ./misc_images/misc2.png
+[DHRF]: ./misc_images/DHRF.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -38,7 +38,9 @@ For example, from this line we know that joint 1 is 0.33 m above base link and a
     <origin xyz="0 0 0.33" rpy="0 0 0"/>
 ```
 ![alt text][URDF]
-	
+
+Next, following the steps explained in Lesson 14, we can assign reference frames to our manipulator's links.
+![alt text][DHRF]
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
 Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
