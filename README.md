@@ -42,6 +42,14 @@ For example, from this line we know that joint 1 is 0.33 m above base link and a
 Next, following the steps explained in Lesson 14, we can assign reference frames to our manipulator's links.
 ![alt text][DHRF]
 
+Taking into account the geometrical data obtained from the kr210.urdf.xacro file, the reference frames defined 
+above and the definition of the following variables, it is not difficult to derived the DH parameters.
+* $$/alpha_{i-1}$$ (twist angle) = angle between $$Z_{i-1}$$ and $$Z_{i}$$ measured about $$X_{i-1}$$ in a right-hand sense.
+* $$a_{i-1}$$ (link legth) = distance from  $$Z_{i-1}$$ and $$Z_{i}$$ measured along $$X_{i-1}$$ where $$X_{i-1}$$ is
+perpendicular to both $$Z_{i-1}$$ and $$Z_{i}$$
+* $$d_{i}$$ (link offset) = signed distance from $$X_{i-1}$$ to $$X_{i}$$ measured along $$Z_{i}$$. 
+* $$\theta_{i}$$ (joint angle) = angle between $$X_{i-1}$$ to $$X_{i}$$ measured about $$Z_{i}$$ in right-hand sense.
+
 Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 --- | --- | --- | --- | ---
 0->1 | 0 | 0 | 0.75 | q1
