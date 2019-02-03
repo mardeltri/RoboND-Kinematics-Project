@@ -5,7 +5,7 @@
 [ForwardKinematcs]: ./misc_images/ForwardKinematcs.png
 [URDF]: ./misc_images/URDF.png
 [DHRF]: ./misc_images/DHRF.png
-[TransformRotations]: ./misc_images/URDF.png
+[TransformRotations]: ./misc_images/TransformRotations.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
