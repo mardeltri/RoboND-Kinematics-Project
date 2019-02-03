@@ -61,11 +61,11 @@ For example, from this line we know that joint 1 is 0.33 m above base link and a
     <origin xyz="0 0 0.33" rpy="0 0 0"/>
 ```
 
-<img src="./misc_images/URDF.png" width="350" />
+<img src="./misc_images/URDF.png" width="500" align="middle"/>
 
 Next, following the steps explained in Lesson 14, we can assign reference frames to our manipulator's links.
 
-<img src="./misc_images/DHRF.png" width="350" />
+<img src="./misc_images/DHRF.png" width="500" align="middle"/>
 
 Taking into account the geometrical data obtained from the kr210.urdf.xacro file, the reference frames defined 
 above and the definition of the following variables, it is not difficult to derived the DH parameters.
@@ -135,9 +135,11 @@ As it can be observed in the figure, this link rotation can be calculated as
 ![Equation 9][Equation9]
 
 where a value can be obtained with the Law of cosines, thus
+
 ![Equation 10][Equation10]
 
 and d can be calculated with basic trigonometric equations
+
 ![Equation 11][Equation11]
 
 
