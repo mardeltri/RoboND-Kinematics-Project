@@ -142,13 +142,31 @@ and d can be calculated with basic trigonometric equations
 
 ![Equation 11][Equation11]
 
+Theta 3 can be computed as depicted in the following figure
 
 <img src="./misc_images/Theta3.png" width="350" />
 
+Thus, as it can been observed in the image above
+
 ![Equation 12][Equation12]
+
+where b can be obtained with the Law of cosines (see the picture above)
+
 ![Equation 13][Equation13]
+
+The angle psi can be easily calculated considering the robot geometry.
+
 ![Equation 14][Equation14]
+
+Up to this point we have the values of theta 1, theta 2 and theta 3. Now values for theta 4, theta 5 and theta 6 will be obtained.
+
+The relation between the rotation matrices will enable us to compute the values for the link angles 4, 5 and 6. First we can compute numerically the expresion for the matrix R36 considering that
+
 ![Equation 15][Equation15]
+
+Pre-multiplying both sides of the above equation by inv(R0_3) leads to:
+
+
 ![Equation 16][Equation16]
 ![Equation 17][Equation17]
 ![Equation 18][Equation18]
