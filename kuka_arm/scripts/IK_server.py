@@ -153,7 +153,7 @@ def handle_calculate_IK(req):
             # Calculate wrist position
             nx = R_rpy[0,2]
             ny = R_rpy[1,2]
-	    nz = R_rpy[2,2]
+	        nz = R_rpy[2,2]
             #
             wx = px - (0.303)*nx
             wy = py - (0.303)*ny
@@ -163,46 +163,32 @@ def handle_calculate_IK(req):
             
             # Calculate theta 2 and theta 3
             # Geometric parameters
-            #A = 1.501
-            # Compute B
-            #r01_0 = Matrix([ 0, 0, 0.75])
-            #r02_0 = Matrix([ 0.35*cos(theta1), 0.35*sin(theta1), 0])
-            #rwc_0 = Matrix([ wx, wy, wz])
-            #Bv = rwc_0 - r01_0 - r02_0
-            #B = sqrt(Bv[0,0]**2+Bv[1,0]**2+Bv[2,0]**2)
-            #C = 1.25
             A = 1.501
             B = sqrt(pow((sqrt(wx*wx+wy*wy)-0.35),2) + pow((wz-0.75),2))
             C = 1.25
 
             a = acos((B**2+C**2-A**2)/(2*B*C))
             b = acos((A**2+C**2-B**2)/(2*A*C))
-            #d = atan2(Bv[2,0],(sqrt(wx**2+wy**2)-0.35))
             
             theta2 = pi/2 - a - atan2(wz-0.75,sqrt(wx*wx+wy*wy)-0.35)
             theta3 = pi/2 - b - 0.036
-
-            #theta2 = pi/2-a-d
-
-            #psi = atan2(0.054,1.5)
-            #psi = 0.036
-            
-            #theta3 = simplify(pi/2-b-psi)
+			
             # Calculate theta 4,5 and 6
             R0_3 = T0_1[0:3,0:3]*T1_2[0:3,0:3]*T2_3[0:3,0:3]
             R0_3 = R0_3.evalf(subs = {q1: theta1, q2: theta2, q3: theta3})
             R3_6 = R0_3.inv("LU")*R_rpy
-            #theta4 = atan2(R3_6[2,2],-R3_6[0,2])
-            theta5 = atan2(sqrt(R3_6[0,2]*R3_6[0,2] + R3_6[2,2]*R3_6[2,2]),R3_6[1,2])
-            #theta5 = atan2(sqrt(R3_6[1,0]*R3_6[1,0] + R3_6[1,1]*R3_6[1,1]),R3_6[1,2])
-            if (theta5 > pi) :
+            
+			theta5 = atan2(sqrt(R3_6[0,2]*R3_6[0,2] + R3_6[2,2]*R3_6[2,2]),R3_6[1,2])
+            
+			# Choose the  correct solution for theta 4 and theta 6
+			if (theta5 > pi) :
                 theta4 = atan2(-R3_6[2,2], R3_6[0,2])
                 theta6 = atan2(R3_6[1,1],-R3_6[1,0])
             else:
                 theta4 = atan2(R3_6[2,2], -R3_6[0,2])
                 theta6 = atan2(-R3_6[1,1],R3_6[1,0])
-            # theta6 = atan2(-R3_6[1,1],R3_6[1,0])
-            # Populate response for the IK request
+            
+			# Populate response for the IK request
             # In the next line replace theta1,theta2...,theta6 by your joint angle variables
 	    joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
 	    joint_trajectory_list.append(joint_trajectory_point)

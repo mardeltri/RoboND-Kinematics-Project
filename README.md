@@ -174,6 +174,7 @@ Computing the following equation with python we can calculate the angles by rela
 ![Equation 17][Equation17]
 
 Theta 5 can be calculated as follows.
+
 ![Equation 18][Equation18]
 
 Depending on its value there are different solutions for theta 4 and theta 6:
@@ -183,7 +184,7 @@ Depending on its value there are different solutions for theta 4 and theta 6:
 ### Project Implementation
 
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
-
+[IK_server](./kuka_arm/scripts/IK_server.py)
 
 Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.  
 
