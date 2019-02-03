@@ -27,6 +27,8 @@
 [Equation17]: ./misc_images/equation17.png
 [Equation18]: ./misc_images/equation18.png
 [Equation19]: ./misc_images/equation19.png
+[Theta2]: ./misc_images/Theta2.png
+[Theta3]: ./misc_images/Theta3.png
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
@@ -110,18 +112,33 @@ the difference between the gripper reference frame as defined in the URDF versus
 
 ![Equation 4][Equation4]
 
-Replacing this rotation matrix in the previous equation it is not difficult to obtain the equation to compute the wrist coordinates in the base link. 
+Replacing these matrices in the previous equation it is not difficult to obtain the equation to compute the wrist coordinates in the base link. 
 
 ![Equation 6][Equation6]
 
+Thus, wrist position can be obtained as follows:
+
 ![Equation 7][Equation7]
+
+Once we have the wrist position we can calculate easily the first link angle, theta1 as:
 
 ![Equation 8][Equation8]
 
+The following drawing is very useful for determining the angle theta 2. 
+
+![Theta 2][Theta2]
+
+As it can be observed in the figure, this link rotation can be calculated as
 ![Equation 9][Equation9]
 
+where a and d values can be obtained with the Law of cosines, thus
 ![Equation 10][Equation10]
+
 ![Equation 11][Equation11]
+
+
+![Theta 3][Theta3]
+
 ![Equation 12][Equation12]
 ![Equation 13][Equation13]
 ![Equation 14][Equation14]
