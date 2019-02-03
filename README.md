@@ -96,15 +96,30 @@ Transformation matrices can be calculated replacing variables by their numerical
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
 The first step to compute the joint angles is to calculate the wrist location. Considering that we have the gripper position and orientation we can relate the wrist position with the gripper one with this equation.
+
 ![Equation 1][Equation1]
+
+where r_ij is the position vector from i to j expressed in the base frame. This equation can be expressed as
+
 ![Equation 2][Equation2]
+
+where R_GB represents the rotation matrix from the gripper link to the base link. This matrix can be calculated using the euler angles (yaw, pitch and roll) and the correction matrix which takes into account
+the difference between the gripper reference frame as defined in the URDF versus the DH parameters.
+
 ![Equation 3][Equation3]
+
 ![Equation 4][Equation4]
-![Equation 5][Equation5]
+
+Replacing this rotation matrix in the previous equation it is not difficult to obtain the equation to compute the wrist coordinates in the base link. 
+
 ![Equation 6][Equation6]
+
 ![Equation 7][Equation7]
+
 ![Equation 8][Equation8]
+
 ![Equation 9][Equation9]
+
 ![Equation 10][Equation10]
 ![Equation 11][Equation11]
 ![Equation 12][Equation12]
