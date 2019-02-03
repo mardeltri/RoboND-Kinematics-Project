@@ -27,8 +27,8 @@
 [Equation17]: ./misc_images/equation17.png
 [Equation18]: ./misc_images/equation18.png
 [Equation19]: ./misc_images/equation19.png
-[Theta2]: (./misc_images/Theta2.png =250x)
-[Theta3]: ./misc_images/Theta3.png =300x
+[Theta2]: ./misc_images/Theta2.png
+[Theta3]: ./misc_images/Theta3.png
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
