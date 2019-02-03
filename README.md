@@ -69,7 +69,7 @@ Considering the previous definitions, the homogeneous transform from frame i-1 t
 
 ![alt text][TransformMatrix]
 
-Transformation matrices can be calculated replacing the variables by its numerical values expressed in DH parameters table. Trigonometric relations has been taken into account to simplify the equations.
+Transformation matrices can be calculated replacing variables by their numerical values expressed in the DH parameters table. Trigonometric relations have been taken into account to simplify the equations.
 
 ![alt text][TransformMatrices]
 

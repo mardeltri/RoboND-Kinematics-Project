@@ -179,7 +179,7 @@ def handle_calculate_IK(req):
             b = acos((A**2+C**2-B**2)/(2*A*C))
             #d = atan2(Bv[2,0],(sqrt(wx**2+wy**2)-0.35))
             
-            theta2 = pi/2 - a - atan2(wz-0.75,sqrt(wx*wx+wy*wy))
+            theta2 = pi/2 - a - atan2(wz-0.75,sqrt(wx*wx+wy*wy)-0.35)
             theta3 = pi/2 - b - 0.036
 
             #theta2 = pi/2-a-d
@@ -192,9 +192,16 @@ def handle_calculate_IK(req):
             R0_3 = T0_1[0:3,0:3]*T1_2[0:3,0:3]*T2_3[0:3,0:3]
             R0_3 = R0_3.evalf(subs = {q1: theta1, q2: theta2, q3: theta3})
             R3_6 = R0_3.inv("LU")*R_rpy
-            theta4 = atan2(R3_6[2,2],-R3_6[0,2])
-            theta5 = atan2(sqrt(R3_6[1,0]*R3_6[1,0] + R3_6[1,1]*R3_6[1,1]),R3_6[1,2])
-            theta6 = atan2(-R3_6[1,1],R3_6[1,0])
+            #theta4 = atan2(R3_6[2,2],-R3_6[0,2])
+            theta5 = atan2(sqrt(R3_6[0,2]*R3_6[0,2] + R3_6[2,2]*R3_6[2,2]),R3_6[1,2])
+            #theta5 = atan2(sqrt(R3_6[1,0]*R3_6[1,0] + R3_6[1,1]*R3_6[1,1]),R3_6[1,2])
+            if (theta5 > pi) :
+                theta4 = atan2(-R3_6[2,2], R3_6[0,2])
+                theta6 = atan2(R3_6[1,1],-R3_6[1,0])
+            else:
+                theta4 = atan2(R3_6[2,2], -R3_6[0,2])
+                theta6 = atan2(-R3_6[1,1],R3_6[1,0])
+            # theta6 = atan2(-R3_6[1,1],R3_6[1,0])
             # Populate response for the IK request
             # In the next line replace theta1,theta2...,theta6 by your joint angle variables
 	    joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
