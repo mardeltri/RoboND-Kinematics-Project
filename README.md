@@ -5,6 +5,7 @@
 [ForwardKinematcs]: ./misc_images/ForwardKinematcs.png
 [URDF]: ./misc_images/URDF.png
 [DHRF]: ./misc_images/DHRF.png
+[TransformRotations]: ./misc_images/TransformRotations.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -60,6 +61,8 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 5->6 | - pi/2 | 0 | 0 | q6
 6->EE | 0 | 0 | 0.303 | 0
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
+Considering the previous definitions, the homogeneous transform from frame i-1 to frame i is cconstractud as a sequence of four basic transformations, two rotations and two transalations, thus:
+![alt text][TransformRotations]
 
 
 
