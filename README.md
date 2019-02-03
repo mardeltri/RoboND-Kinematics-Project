@@ -168,8 +168,16 @@ Pre-multiplying both sides of the above equation by inv(R0_3) leads to:
 
 
 ![Equation 16][Equation16]
+
+Computing the following equation with python we can calculate the angles by relating both members.
+
 ![Equation 17][Equation17]
+
+Theta 5 can be calculated as follows.
 ![Equation 18][Equation18]
+
+Depending on its value there are different solutions for theta 4 and theta 6:
+
 ![Equation 19][Equation19]
 
 ### Project Implementation
