@@ -60,10 +60,12 @@ For example, from this line we know that joint 1 is 0.33 m above base link and a
 <joint name="joint_1" type="revolute">
     <origin xyz="0 0 0.33" rpy="0 0 0"/>
 ```
-![alt text][URDF]
+
+<img src="./misc_images/URDF.png" width="350" />
 
 Next, following the steps explained in Lesson 14, we can assign reference frames to our manipulator's links.
-![alt text][DHRF]
+
+<img src="./misc_images/DHRF.png" width="350" />
 
 Taking into account the geometrical data obtained from the kr210.urdf.xacro file, the reference frames defined 
 above and the definition of the following variables, it is not difficult to derived the DH parameters.
@@ -127,7 +129,7 @@ Once we have the wrist position we can calculate easily the first link angle, th
 
 The following drawing is very useful for determining the angle theta 2. 
 
-<img src="./misc_images/Theta2.png" width="200" />
+<img src="./misc_images/Theta2.png" width="350" />
 As it can be observed in the figure, this link rotation can be calculated as
 
 ![Equation 9][Equation9]
@@ -139,7 +141,7 @@ and d can be calculated with basic trigonometric equations
 ![Equation 11][Equation11]
 
 
-![Theta 3][Theta3]
+<img src="./misc_images/Theta3.png" width="350" />
 
 ![Equation 12][Equation12]
 ![Equation 13][Equation13]
