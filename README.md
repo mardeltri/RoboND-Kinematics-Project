@@ -8,6 +8,25 @@
 [TransformRotation]: ./misc_images/TransformRotation.png
 [TransformMatrix]: ./misc_images/TransformMatrix.png
 [TransformMatrices]: ./misc_images/TransformMatrices.png
+[Equation1]: ./misc_images/equation1.png
+[Equation2]: ./misc_images/equation2.png
+[Equation3]: ./misc_images/equation3.png
+[Equation4]: ./misc_images/equation4.png
+[Equation5]: ./misc_images/equation5.png
+[Equation6]: ./misc_images/equation6.png
+[Equation7]: ./misc_images/equation7.png
+[Equation8]: ./misc_images/equation8.png
+[Equation9]: ./misc_images/equation9.png
+[Equation10]: ./misc_images/equation10.png
+[Equation11]: ./misc_images/equation11.png
+[Equation12]: ./misc_images/equation12.png
+[Equation13]: ./misc_images/equation13.png
+[Equation14]: ./misc_images/equation14.png
+[Equation15]: ./misc_images/equation15.png
+[Equation16]: ./misc_images/equation16.png
+[Equation17]: ./misc_images/equation17.png
+[Equation18]: ./misc_images/equation18.png
+[Equation19]: ./misc_images/equation19.png
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
@@ -76,9 +95,26 @@ Transformation matrices can be calculated replacing variables by their numerical
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
-And here's where you can draw out and show your math for the derivation of your theta angles. 
-
-![alt text][image2]
+The first step to compute the joint angles is to calculate the wrist location. Considering that we have the gripper position and orientation we can relate the wrist position with the gripper one with this equation.
+![Equation 1][Equation1]
+![Equation 2][Equation2]
+![Equation 3][Equation3]
+![Equation 4][Equation4]
+![Equation 5][Equation5]
+![Equation 6][Equation6]
+![Equation 7][Equation7]
+![Equation 8][Equation8]
+![Equation 9][Equation9]
+![Equation 10][Equation10]
+![Equation 11][Equation11]
+![Equation 12][Equation12]
+![Equation 13][Equation13]
+![Equation 14][Equation14]
+![Equation 15][Equation15]
+![Equation 16][Equation16]
+![Equation 17][Equation17]
+![Equation 18][Equation18]
+![Equation 19][Equation19]
 
 ### Project Implementation
 
