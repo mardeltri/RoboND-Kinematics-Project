@@ -64,10 +64,13 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 Considering the previous definitions, the homogeneous transform from frame i-1 to frame i is cconstractud as a sequence of four basic transformations, two rotations and two transalations, thus:
+
 ![alt text][TransformRotation]
+
 ![alt text][TransformMatrix]
 
 Transformation matrices can be calculated replacing the variables by its numerical values expressed in DH parameters table. Trigonometric relations has been taken into account to simplify the equations.
+
 ![alt text][TransformMatrices]
 
 
