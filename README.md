@@ -27,8 +27,8 @@
 [Equation17]: ./misc_images/equation17.png
 [Equation18]: ./misc_images/equation18.png
 [Equation19]: ./misc_images/equation19.png
-[Theta2]: ./misc_images/Theta2.png
-[Theta3]: ./misc_images/Theta3.png
+[Screenshot1]: ./misc_images/Screenshot1.jpg
+[Screenshot2]: ./misc_images/Screenshot2.jpg
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
@@ -184,12 +184,12 @@ Depending on its value there are different solutions for theta 4 and theta 6:
 ### Project Implementation
 
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
-[IK_server](./kuka_arm/scripts/IK_server.py)
+The filled IK_Server program can be found [here](./kuka_arm/scripts/IK_server.py). It can be seen that the previous equations can be implemented directly.
 
-Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.  
+It was observed that, although the robot was able to correctly pick and place the object, the movements can be clearly improved since the Robot sometimes carries out unnecessary turns. 
 
+In the following screenshots, it can be seen that the Robot is able to pick and place the object correctly several times (10/10).
 
-And just for fun, another example image:
-![alt text][image3]
+![Screenshot 1][Screenshot1]
 
-
+![Screenshot 2][Screenshot2]
