@@ -128,7 +128,7 @@ Once we have the wrist position we can calculate easily the first link angle, th
 The following drawing is very useful for determining the angle theta 2. 
 
 ![Theta 2][Theta2]
-
+<img src="./misc_images/Theta2.png" width="200" />
 As it can be observed in the figure, this link rotation can be calculated as
 
 ![Equation 9][Equation9]
